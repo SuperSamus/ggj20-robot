@@ -5,14 +5,14 @@ using UnityEngine;
 public class ConveyorBelt : MonoBehaviour
 {
     public Vector3 speed;
+    public float timeToInvert;
+
+    public void invert() {
+        speed *= -1;
+    }
 
     public void OnCollisionStay(Collision other) {
-        var otherRb = other.gameObject.GetComponent<Rigidbody>();
-        otherRb.velocity = speed;
+        other.gameObject.GetComponent<Rigidbody>().AddForce(speed);
     }
 
-    public void OnCollisionExit(Collision other) {
-        var otherRb = other.gameObject.GetComponent<Rigidbody>();
-        otherRb.velocity = Vector3.zero;
-    }
 }
