@@ -658,10 +658,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Generic capsule
+    names:
+    - Tim
+    - Tom
     sentences:
-    - Plz...
-    - Why are you doing this?
+    - Why do Java developers wear glasses?
+    - Because they can't C#!
 --- !u!136 &911448989
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -885,12 +887,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Geek capsule
+    names:
+    - Guy
+    - Glory
     sentences:
-    - Why do Java developers wear glasses?
-    - '''cause they can''t C#!
-
-      LOL'
+    - Hi. I'm a guy.
+    - Now someone else is talking, OMG.
 --- !u!136 &1161398991
 CapsuleCollider:
   m_ObjectHideFlags: 0
