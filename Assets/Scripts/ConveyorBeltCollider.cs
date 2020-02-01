@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class ConveyorBeltCollider : MonoBehaviour
 {
+    public List<ConveyorBelt> conveyorBelts = new List<ConveyorBelt>();
+
     void OnTriggerEnter(Collider other) {
-        gameObject.GetComponentInParent<ConveyorBelt>().invert();
+        foreach (var conveyor in conveyorBelts)
+        {
+           conveyor.GetComponent<ConveyorBelt>().invert(); 
+        }
     }
 }
