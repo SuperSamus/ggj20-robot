@@ -6,15 +6,14 @@ public class Door : MonoBehaviour
 {
     public List<Switch> switches = new List<Switch>();
 
-    bool allButtonsPushed() {
+    void allButtonsPushed() {
         foreach (var s in switches)
         {
             if (!s.isPressed()) {
-                return false;
+                return;
             }
         }
         gameObject.SetActive(false);
-        return true;
     }
 
 
