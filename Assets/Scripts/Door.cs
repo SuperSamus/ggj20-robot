@@ -9,7 +9,7 @@ public class Door : MonoBehaviour
     bool allButtonsPushed() {
         foreach (var s in switches)
         {
-            if (!s.pressed) {
+            if (!s.isPressed()) {
                 return false;
             }
         }
