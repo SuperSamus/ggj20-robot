@@ -13,9 +13,10 @@ public class Door : MonoBehaviour
                 return false;
             }
         }
-        Debug.Log("Now they are all pressed!");
+        gameObject.SetActive(false);
         return true;
     }
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,6 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
