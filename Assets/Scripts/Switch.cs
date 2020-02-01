@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
-
     bool pressed;
-    public Func<bool> switchChanged;
+    public SwitchType type;
+    public string activatedByTag;
+    public Action switchChanged;
 
     public bool isPressed() {
         return pressed;
@@ -16,11 +17,18 @@ public class Switch : MonoBehaviour
         pressed = state;
         switchChanged.Invoke();
     }
+
     public void OnTriggerEnter(Collider other) {
-        setSwitch(true);
+        if ((type == SwitchType.Press || type == SwitchType.Hold) && (activatedByTag == "" || other.CompareTag(activatedByTag))) {
+            setSwitch(true);
+        }
     }
 
     public void OnTriggerExit(Collider other) {
-        setSwitch(false);
+        if (type == SwitchType.Hold && (activatedByTag == "" || other.CompareTag(activatedByTag))) {
+            setSwitch(false);
+        }
     }
 }
+
+public enum SwitchType {Manual, Press, Hold};
