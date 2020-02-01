@@ -6,29 +6,21 @@ using UnityEngine;
 public class Switch : MonoBehaviour
 {
 
-    public bool pressed;
+    bool pressed;
     public Func<bool> switchChanged;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
+    public bool isPressed() {
+        return pressed;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OnTriggerEnter(Collider other) {
-        pressed = true;
+    public void setSwitch(bool state) {
+        pressed = state;
         switchChanged.Invoke();
+    }
+    public void OnTriggerEnter(Collider other) {
+        setSwitch(true);
     }
 
     public void OnTriggerExit(Collider other) {
-        pressed = false;
-        switchChanged.Invoke();
+        setSwitch(false);
     }
 }
