@@ -24,6 +24,7 @@ public class Activatable : MonoBehaviour
         foreach (var s in switches)
         {
             s.switchChanged += allButtonsPushed;
+            allButtonsPushed();
         }
     }
 }
