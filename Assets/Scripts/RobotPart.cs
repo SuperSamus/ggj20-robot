@@ -8,6 +8,8 @@ public class RobotPart : MonoBehaviour
     public bool upperIsStackable, downIsStackable;
     public bool isAttached;
     public MyInput detachedInput, attachedInput;
+    public Entity attachedToEntity;
+    public int partNumber;
 
     public virtual void AttachedAction(float firstInput, float secondInput)
     {
