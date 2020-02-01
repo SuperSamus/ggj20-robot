@@ -8,6 +8,8 @@ public class HeadPart : RobotPart
     public GameObject lineObject;
 
     public float timeToDestroyLaser;
+    private GameObject instantiatedLaser;
+    public Material mat1, mat2;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class HeadPart : RobotPart
     
     public void ShootLaser()
     {
-        if (lineObject == null)
+        if (instantiatedLaser == null)
         {
             RaycastHit hit;
             var shotStartPosition = shootHole.transform.position;
@@ -44,18 +46,22 @@ public class HeadPart : RobotPart
 
     public void CreateLaser(Vector3 from, Vector3 to)
     {
-        lineObject = new GameObject("lineRenderer");
-        var lineR = lineObject.AddComponent<LineRenderer>();
+        instantiatedLaser = Instantiate(lineObject);
+        var lineR = instantiatedLaser.GetComponent<LineRenderer>();
+        var lineR2 = instantiatedLaser.transform.GetChild(0).GetComponent<LineRenderer>();
         lineR.SetPosition(0, from);
         lineR.SetPosition(1, to);
+        lineR2.SetPosition(0, from);
+        lineR2.SetPosition(1, to);
         StartCoroutine(DestroyLaser());
         
     }
 
+
     public IEnumerator DestroyLaser()
     {
         yield return new WaitForSeconds(timeToDestroyLaser);
-        Destroy(lineObject, timeToDestroyLaser);
-        lineObject = null;
+        Destroy(instantiatedLaser);
+        instantiatedLaser = null;
     }
 }

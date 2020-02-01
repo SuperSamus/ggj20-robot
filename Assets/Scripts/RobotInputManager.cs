@@ -5,6 +5,7 @@ using UnityEngine;
 public class RobotInputManager : MonoBehaviour
 {
     public GameManager gameManager;
+    public KeyCode dropDownKey, getCloseParts;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,51 +15,58 @@ public class RobotInputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckInputs(gameManager.selectedParts);
+        CheckInputs(gameManager.selectedPart);
     }
 
-    public void CheckInputs(List<RobotPart> parts)
+    public void CheckInputs(RobotPart part)
     {
-        foreach(var part in parts)
+        if(Input.GetKeyDown(dropDownKey))
         {
-            if(part.isAttached)
+            gameManager.selectedPart.attachedToEntity.RemoveRobotPart(gameManager.selectedPart);
+        }
+        else if(Input.GetKeyDown(getCloseParts))
+        {
+            gameManager.selectedPart.attachedToEntity.CheckProximity(gameManager.selectedPart);
+        }
+
+        if (part.isAttached)
+        {
+            if (part.attachedInput.inputType == InputType.axis)
             {
-                if(part.attachedInput.inputType == InputType.axis)
+                var x = Input.GetAxis("Horizontal");
+                var z = Input.GetAxis("Vertical");
+                if ((x != 0 || z != 0))
                 {
-                    var x = Input.GetAxis("Horizontal");
-                    var z = Input.GetAxis("Vertical");
-                    if((x != 0 || z != 0))
-                    {
-                        part.AttachedAction(x, z);
-                    }
-                }
-                else
-                {
-                    if(Input.GetKey(part.attachedInput.key))
-                    {
-                        part.AttachedAction(1, 0);
-                    }
+                    part.AttachedAction(x, z);
                 }
             }
             else
             {
-                if (part.detachedInput.inputType == InputType.axis)
+                if (Input.GetKey(part.attachedInput.key))
                 {
-                    var x = Input.GetAxis("Horizontal");
-                    var z = Input.GetAxis("Vertical");
-                    if ((x != 0 || z != 0))
-                    {
-                        part.DetachedAction(x, z);
-                    }
+                    part.AttachedAction(1, 0);
                 }
-                else
+            }
+        }
+        else
+        {
+            if (part.detachedInput.inputType == InputType.axis)
+            {
+                var x = Input.GetAxis("Horizontal");
+                var z = Input.GetAxis("Vertical");
+                if ((x != 0 || z != 0))
                 {
-                    if (Input.GetKey(part.detachedInput.key))
-                    {
-                        part.DetachedAction(1, 0);
-                    }
+                    part.DetachedAction(x, z);
+                }
+            }
+            else
+            {
+                if (Input.GetKey(part.detachedInput.key))
+                {
+                    part.DetachedAction(1, 0);
                 }
             }
         }
     }
 }
+
