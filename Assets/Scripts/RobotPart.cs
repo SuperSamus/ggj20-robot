@@ -9,17 +9,18 @@ public class RobotPart : MonoBehaviour
     public bool isAttached;
     public MyInput detachedInput, attachedInput;
 
-    public void AttachedAction(float firstInput, float secondInput)
+    public virtual void AttachedAction(float firstInput, float secondInput)
     {
-
+        
     }
 
-    public void DetachedAction(float firstInput, float secondInput)
+    public virtual void DetachedAction(float firstInput, float secondInput)
     {
 
     }
 }
 
+[System.Serializable]
 public class MyInput
 {
     public InputType inputType;
