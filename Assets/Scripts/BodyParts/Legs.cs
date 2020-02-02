@@ -28,13 +28,13 @@ public class Legs : RobotPart
         if (x != 0)
         {
             //attachedToEntity.rb.AddForce(transform.right * x * movementForce);
-            attachedToEntity.rb.AddForce(Vector3.right * -x * movementForce);
+            attachedToEntity.rb.AddForce(Vector3.right * -x * movementForce * Time.deltaTime);
             attachedToEntity.transform.LookAt(attachedToEntity.transform.position + Vector3.right * -x);
         }
         else if (z != 0)
         {
             // attachedToEntity.rb.AddForce(transform.forward * z * movementForce);
-            attachedToEntity.rb.AddForce(Vector3.forward * z * movementForce);
+            attachedToEntity.rb.AddForce(Vector3.forward * z * movementForce * Time.deltaTime);
             attachedToEntity.transform.LookAt(attachedToEntity.transform.position + Vector3.forward * z);
         }
 
