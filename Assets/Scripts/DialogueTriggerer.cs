@@ -8,7 +8,7 @@ public class DialogueTriggerer : MonoBehaviour
     public Dialogue dialogue;
 
     public void OnTriggerEnter(Collider other) {
-        if (other.CompareTag(activatedByTag)) {
+        if (activatedByTag == "" || other.CompareTag(activatedByTag)) {
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             gameObject.SetActive(false);
         }
