@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Door : Activatable
 {
-    private MeshRenderer mr;
-    private Collider c;
+    private GameObject[] children = new GameObject[2];
+    private BoxCollider c;
     void Start() {
-        mr = GetComponent<MeshRenderer>();
-        c = GetComponent<Collider>();
+        children[0] = transform.GetChild(0).gameObject;
+        children[1] = transform.GetChild(1).gameObject;
+        c = GetComponent<BoxCollider>();
     }
 
     void Update()
@@ -22,12 +23,18 @@ public class Door : Activatable
     }
 
     void open() {
-        mr.enabled = false;
+        foreach (var child in children)
+        {
+            child.SetActive(false);
+        }
         c.enabled = false;
     }
 
     void close() {
-        mr.enabled = true;
+        foreach (var child in children)
+        {
+            child.SetActive(true);
+        }
         c.enabled = true;
     }
 }
