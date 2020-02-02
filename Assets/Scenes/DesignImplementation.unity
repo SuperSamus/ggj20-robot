@@ -39343,16 +39343,36 @@ MonoBehaviour:
   downIsStackable: 0
   isAttached: 0
   detachedInput:
-    inputType: 0
-    key: 0
+    inputType: 1
+    key: 32
   attachedInput:
     inputType: 0
     key: 0
   attachedToEntity: {fileID: 0}
   partNumber: 2
+  animator: {fileID: 863176719}
   isGrabbing: 0
   grabRadius: 1
   maxDistance: 2.9
+--- !u!95 &863176719
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863176716}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06dd414f4d4d2994cb69a610b3e721d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &864695531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72998,6 +73018,26 @@ MonoBehaviour:
   attachedToEntity: {fileID: 0}
   partNumber: 1
   movementForce: 100
+  animator: {fileID: 1833158078}
+--- !u!95 &1833158078
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833158075}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ed4cb9ddb3c3b9409a8b2c298f91ad1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1836784116
 PrefabInstance:
   m_ObjectHideFlags: 0

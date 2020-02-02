@@ -5,13 +5,14 @@ using UnityEngine;
 public class Grab : RobotPart
 {
     private GameObject grabbedObject;
+    public Animator animator;
 
     public bool isGrabbing;
     public float grabRadius = 1f, maxDistance = 2f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -59,6 +60,8 @@ public class Grab : RobotPart
                 Debug.Log("Ho settato a parent");
                 grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
                 grabbedObject.GetComponent<Collider>().isTrigger = true;
+                animator.Play("Grab");
+                return;
             }
         }
         
@@ -70,5 +73,6 @@ public class Grab : RobotPart
         grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
         grabbedObject.GetComponent<Collider>().isTrigger = false;
         isGrabbing = false;
+        animator.Play("NoGrab");
     }
 }

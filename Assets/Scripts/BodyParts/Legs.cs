@@ -6,6 +6,7 @@ public class Legs : RobotPart
 {
     private Rigidbody rb;
     public float movementForce = 1;
+    public Animator animator;
 
     void Start()
     {
@@ -22,13 +23,13 @@ public class Legs : RobotPart
         Move(firstInput, secondInput);
     }
 
-    public void Move(float x, float z)
+    public void Move(float z, float x)
     {
         if (x != 0)
         {
             //attachedToEntity.rb.AddForce(transform.right * x * movementForce);
-            attachedToEntity.rb.AddForce(Vector3.right * x * movementForce);
-            attachedToEntity.transform.LookAt(attachedToEntity.transform.position + Vector3.right * x);
+            attachedToEntity.rb.AddForce(Vector3.right * -x * movementForce);
+            attachedToEntity.transform.LookAt(attachedToEntity.transform.position + Vector3.right * -x);
         }
         else if (z != 0)
         {
@@ -36,7 +37,7 @@ public class Legs : RobotPart
             attachedToEntity.rb.AddForce(Vector3.forward * z * movementForce);
             attachedToEntity.transform.LookAt(attachedToEntity.transform.position + Vector3.forward * z);
         }
-        
-        
+
+        animator.Play("Walk");
     }
 }
