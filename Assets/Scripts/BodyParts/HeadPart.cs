@@ -36,7 +36,7 @@ public class HeadPart : RobotPart
             {
                 if (hit.transform.gameObject.GetComponent<Switch>())
                 {
-                    //Da fare
+                    hit.transform.gameObject.GetComponent<Switch>().setSwitch(true);
                 }
                 endPosition = hit.point;
             }
