@@ -674,8 +674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPart: {fileID: 648578721}
   allParts: []
-  switchUp: 273
-  switchDown: 274
+  switchUp: 110
+  switchDown: 109
 --- !u!4 &996977749
 Transform:
   m_ObjectHideFlags: 0
