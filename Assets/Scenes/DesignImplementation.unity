@@ -13237,6 +13237,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 285963308}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &287435322
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1532077412296101913, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.3864164
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532077412296101913, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6955557
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532077412296101913, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.901342
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532077412296101913, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532077412296101913, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532077412296101913, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532077412296101913, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532077412296101913, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532077412296101913, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532077412296101913, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532077412296101913, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732120301808785510, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894138267809321920, guid: 4445fc5b31d927128a095dcd8d5050ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4445fc5b31d927128a095dcd8d5050ac, type: 3}
 --- !u!1001 &288764481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69200,6 +69274,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640481233}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1641373897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8289616502597210097, guid: 12687c03c9970004d8b9f236609f1f49,
+    type: 3}
+  m_PrefabInstance: {fileID: 1484379007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1641373898
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641373897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.41, z: 0}
 --- !u!1001 &1646976937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85400,7 +85493,7 @@ Transform:
   - {fileID: 5383772185965388480}
   - {fileID: 5383772186480305976}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5383772185965388480
 Transform:
