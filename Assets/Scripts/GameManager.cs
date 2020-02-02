@@ -32,11 +32,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        next = next.OrderByDescending(x => x.partNumber).ToList();
+        next = next.OrderBy(x => x.partNumber).ToList();
 
         if(next.Count == 0)
         {
-            selectedPart = allParts[0];
+            selectedPart = allParts.OrderBy(x=> x.partNumber).ToList().First();
         }
         else
         {
@@ -55,11 +55,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        next = next.OrderBy(x => x.partNumber).ToList();
+
+        next = next.OrderByDescending(x => x.partNumber).ToList();
 
         if (next.Count == 0)
         {
-            selectedPart = allParts[allParts.Count-1];
+            selectedPart = allParts.OrderBy(x => x.partNumber).ToList().Last();
         }
         else
         {

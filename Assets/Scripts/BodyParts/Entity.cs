@@ -71,6 +71,7 @@ public class Entity : MonoBehaviour
                 var from = highestPart.transform.position + gameObject.transform.forward;
                 if (Physics.Raycast(from, from + Vector3.down * 10f, out hit, 10f))
                 {
+                    if (hit.collider.tag == "RobotPart") return;
                     Debug.Log("Ho colpito: " + hit.transform.name);
                     part.transform.parent = null;
                     
@@ -87,6 +88,7 @@ public class Entity : MonoBehaviour
                     CreateBoxCollider();
                     ReorderParts();
                     go.transform.position = hit.point + Vector3.up * 0.7f;
+                    go.tag = "RobotPart";
                 }
                 else
                 {
@@ -111,7 +113,6 @@ public class Entity : MonoBehaviour
         var box = GetComponent<BoxCollider>();
         var size = parts.Count;
         var offset = (size - 1) / 2f;
-        Debug.Log(offset);
         box.size = new Vector3(1, size, 1);
         box.center = new Vector3(0, offset, 0);
 

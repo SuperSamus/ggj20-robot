@@ -42,7 +42,7 @@ public class RobotInputManager : MonoBehaviour
             }
             else
             {
-                if (Input.GetKey(part.attachedInput.key))
+                if (Input.GetKeyDown(part.attachedInput.key))
                 {
                     part.AttachedAction(1, 0);
                 }
@@ -61,7 +61,7 @@ public class RobotInputManager : MonoBehaviour
             }
             else
             {
-                if (Input.GetKey(part.detachedInput.key))
+                if (Input.GetKeyDown(part.detachedInput.key))
                 {
                     part.DetachedAction(1, 0);
                 }
