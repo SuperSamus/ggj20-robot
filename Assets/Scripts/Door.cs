@@ -6,14 +6,14 @@ public class Door : Activatable
 {
     private GameObject[] children = new GameObject[2];
     private BoxCollider c;
-    void Start() {
-        children[0] = transform.GetChild(0).gameObject;
-        children[1] = transform.GetChild(1).gameObject;
-        c = GetComponent<BoxCollider>();
-    }
+
 
     void Update()
     {
+        children[0] = transform.GetChild(0).gameObject;
+        children[1] = transform.GetChild(1).gameObject;
+        c = GetComponent<BoxCollider>();
+
         if (active) {
             open();
         }
